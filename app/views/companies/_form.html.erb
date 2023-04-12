@@ -1,6 +1,7 @@
 <%= simple_form_for @company do |form| %>
   <%= form.input :name %>
   <%= form.input :url %>  
+  <%= image_tag(url_for(@company.logo), class: 'logo-company') unless @company.new_record? && !@company.logo.nil? %>
   <%= form.input :logo %>
   <%= form.button :submit, class: 'btn btn-primary' %>
 <% end %>
