@@ -10,20 +10,21 @@
         <li class="nav-item">
           <%= link_to 'Home', root_path, class: 'nav-link active' %>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login/Cadastro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-       <!--  <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li> -->
+        <% unless user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'Login/Cadastro', user_session_path, class: 'nav-link' %>
+          </li>
+        <% end %>
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><%= link_to 'Sair', destroy_user_session_path, class: 'dropdown-item', method: :delete %></li>
+            </ul>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
