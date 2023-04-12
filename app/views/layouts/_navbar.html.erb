@@ -14,6 +14,9 @@
           <li class="nav-item">
             <%= link_to 'Login/Cadastro', user_session_path, class: 'nav-link' %>
           </li>
+          <li class="nav-item">
+            <%= link_to 'Empresas', new_company_path, class: 'nav-link' %>
+          </li>
         <% end %>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
