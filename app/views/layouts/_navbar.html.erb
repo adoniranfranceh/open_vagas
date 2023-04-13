@@ -14,19 +14,19 @@
           <li class="nav-item">
             <%= link_to 'Login/Cadastro', user_session_path, class: 'nav-link' %>
           </li>
-          <li class="nav-item">
-            <%= link_to 'Empresas', new_company_path, class: 'nav-link' %>
-          </li>
+        </ul>
         <% end %>
         <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'Minha Empresa', dynamic_url_company, class: 'nav-link' %>
+          </li>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><%= link_to 'Sair', destroy_user_session_path, class: 'dropdown-item', method: :delete %></li>
-            </ul>
-          </li>
         <% end %>
       </ul>
     </div>
