@@ -27,6 +27,10 @@
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><%= link_to 'Sair', destroy_user_session_path, class: 'dropdown-item', method: :delete %></li>
+            </ul>
+            <li class="nav-item">
+              <%= link_to 'Publicar Vagas', new_position_path, class: 'nav-link public-position' %>
+            </li>
         <% end %>
       </ul>
     </div>
