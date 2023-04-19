@@ -6,8 +6,14 @@
   <%= form.input :publish %>
   <%= form.input :city %>
   <%= form.input :state %>
-  <%= form.input :summary %>
-  <%= form.input :description %>
+  <%= form.input :summary, maxlength: 360, input_html: { class: 'count-textarea', rows: 4 } %>
+  <div id="the-count">
+    <span id="current"> 0 </span>
+    <span id="maximun"> / 360 </span>
+  </div>
+  <label>Descrição</label>
+  <%= form.rich_text_area :description, class: 'trix-edit' %>
+
   <%= form.button :submit, class: 'btn btn-primary' %>
 <% end %>
 
