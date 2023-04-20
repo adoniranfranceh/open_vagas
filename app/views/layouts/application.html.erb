@@ -8,7 +8,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+   
   </head>
 
   <body class="bg-body-tertiary">
@@ -16,5 +16,13 @@
     <main class="container">
       <%= yield %>
     </main>  
+<<<<<<< HEAD
+=======
+    <footer>
+      <p>Sistema desenvolvido por Adoniran France</p>
+      <p><%= "Desde #{Time.new.year}" %></p>
+    </footer>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+>>>>>>> fc060e0... creating initial page to see all positions
   </body>
 </html>

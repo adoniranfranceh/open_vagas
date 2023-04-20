@@ -1,0 +1,67 @@
+body {
+  background-color: #f5f7fb !important;
+}
+
+.container {
+  padding: 20px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  box-shadow: 0px 0px 6px #888;
+  margin: 20px auto 20px auto;
+}
+
+footer {
+  background: white;
+  padding: 10px 0px;
+  margin: auto;
+  text-align: center;
+}
+
+footer p {
+  margin: 0px;
+  line-height: 30px;
+}
+<<<<<<< HEAD
+=======
+
+.public-position {
+  border: 1px solid #fff;
+  border-radius: 3px;
+  width: 120px;
+  padding-left: 5px;
+}
+
+.public-position:hover {
+  background-color: #f5f7fb;
+  color: #000 !important;
+}
+
+.card-position {
+  border: none !important;
+}
+
+.card-position .card-body {
+  padding: 0px !important;
+}
+
+.group-social-network img{
+  margin: 0px 2px;
+}
+
+.share-copy-icon {
+  background-color: #72869c;
+  border-color: #72869c;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.conteiner-card {
+  box-shadow: 0px 0px 3px #888 !important;
+}
+
+.pagination {
+  align-items: center;
+  justify-content: center;
+}
+>>>>>>> 35cdb55... creating initial page to see all positions
