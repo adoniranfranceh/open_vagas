@@ -1,0 +1,33 @@
+<div class="card card-position">
+  <div class="card-body">
+    <div class="container conteiner-card">
+      <div class="row">
+        <div class="col-2">
+          <%= image_tag position.company.logo, alt: "Logo marca da empresa #{position.company.name}", class: 'card-img-top' %>
+        </div>
+        <div class="col-10">
+          <h4>
+            <%= position.name %>
+          </h4>
+          <h5>
+            <%= "#{career_name(position.career)} - #{position.city} - #{contract_name(position.contract)}" %>
+          </h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam officia porro ab, nihil quis earum ratione repudiandae, ipsam neque quidem iusto commodi ipsum dolor cumque repellat fugiat corporis voluptatibus eaque.</p>
+          <div class="row">
+            <div class="col-sm mt-3">
+              <%= link_to 'Ver mais', public_position_path(position.slug), class: 'btn btn-danger' %>
+              <% if user_signed_in? %>
+                <% if !UserApplicantQuery.new(current_user.id, position.id).call %>
+                  <%= link_to 'Candidatar-se', public_position_path(position.slug), {:remote => true, "data-target" => "#modal", "data-toggle" => "modal", 'data-backdrop' => 'static', 'data-keyboard' => 'false', class: 'btn btn-success'} %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="col-sm text-right mt-3 group-social-network">
+              <%= render partial: 'shared/social_network', locals: {position: position} %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
