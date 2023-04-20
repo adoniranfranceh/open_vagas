@@ -1,0 +1,26 @@
+<h2>Minhas vagas</h2>
+
+<table class="table">
+  <thead class="table-dark">
+    <th>Título</th>
+    <th>Carreira</th>
+    <th>Local</th>
+    <th>Tipo de contrato</th>
+    <th>Candidaturas</th>
+    <th>Ações</th>
+  </thead>
+
+  <tbody>
+     <% @positions.each do |position| %>
+     <tr>
+       <td><%= position.name %></td>
+       <td><%= position.career %></td>
+       <td><%= position.remote %></td>
+       <td><%= position.contract %></td>
+       <td> 1 (ver detalhes)</td>
+       <td><%= link_to 'Editar', edit_position_path(position) %></td>
+       
+     </tr>
+     <% end %>
+  </tbody>
+</table>

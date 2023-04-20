@@ -8,7 +8,19 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
+import "jquery"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require("trix")
+require("@rails/actiontext")
+
+$(document).ready(function(){
+  $('#current').text($('.count-textarea').val().length);
+  $('.count-textarea').keyup(function(){
+    var characterCount = $(this).val().length;
+    $('#current').text(characterCount);
+  });
+});
