@@ -2,36 +2,31 @@
   <h1>Open Vagas</h1>
   <p>Mural de vagas compartilhadas pela comunidade.</p>
 </header>
-<%= search_form_for @q, url: root_path do |f| %>
   <div class="row">
     <div class="col-sm">
       <div class="form-group">
-        <%= f.label :name_cont, "Carreira" %>
-        <%= f.search_field :name_cont, class: 'form-control' %>
+        <input type="" name="" placeholder="Carreira">
       </div>
     </div>
     <div class="col-sm">
       <div class="form-group">
-        <%= f.label :contract_eq, "Modalidade" %>
-        <%= f.select :contract_eq, options_from_collection_for_select(@contracts, :second, :first, @q.contract_eq), { include_blank: true }, { class: 'form-control' } %>
+        <input type="" name="" placeholder="Modalidade">
       </div>
     </div>
     <div class="col-sm">
       <div class="form-group">
-        <%= f.label :state_eq, "Localidade" %>
-        <%= f.select :state_eq, options_from_collection_for_select(Brazil.states, :first, :second, @q.state_eq), { include_blank: true }, { class: 'form-control' } %>
+        <input type="" name="" placeholder="Localidade">
       </div>
     </div>
     <div class="col-sm">
       <button class="btn btn-danger" style="margin-top: 31px;" type="submit">Pesquisar</button>
     </div>
   </div>
-<% end %>
 <% @positions.each do |position| %>
   <%= render position %>
 <% end %>
 <p class="d-block text-center mt-3">
   <div class="text-center">
-    <%= paginate @positions, theme: 'twitter-bootstrap-4' %>
+    <%= "paginate " %>
   </div>
 </p>
