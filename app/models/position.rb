@@ -7,7 +7,16 @@ class Position < ApplicationRecord
   validates :name, :career, :contract, :city, :state, :summary, presence: true
 
   before_save :set_slug
+
   private
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["career", "city", "company_id", "contract", "created_at", "id", "name", "publish", "remote", "slug", "state", "summary", "updated_at"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["company", "rich_text_description"]
+  end
 
   def set_slug
     self.slug = "#{self.company.name.parameterize}-#{self.name.parameterize}"
