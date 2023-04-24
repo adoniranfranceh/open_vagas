@@ -5,7 +5,7 @@
   <%= form.input :remote %>
   <%= form.input :publish %>
   <%= form.input :city %>
-  <%= form.input :state %>
+  <%= form.input :state, as: :select, collection: Brazil.states, label_method: :second, value_method: :first %>
   <%= form.input :summary, maxlength: 360, input_html: { class: 'count-textarea', rows: 4 } %>
   <div id="the-count">
     <span id="current"> 0 </span>

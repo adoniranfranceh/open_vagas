@@ -2,6 +2,8 @@
   <h1>Open Vagas</h1>
   <p>Mural de vagas compartilhadas pela comunidade.</p>
 </header>
+
+<%= search_form_for @q do |f| %>
   <div class="row">
     <div class="col-sm">
       <div class="form-group">
@@ -27,6 +29,6 @@
 <% end %>
 <p class="d-block text-center mt-3">
   <div class="text-center">
-    <%= "paginate " %>
+    <%= paginate @positions, theme: 'twitter-bootstrap-4' %>
   </div>
 </p>
