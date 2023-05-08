@@ -31,6 +31,6 @@ $(document).ready(function(){
     var url = $(this).attr('data-clipboard-text');
     navigator.clipboard.writeText(url);
     alert('URL copiada com sucesso!')
-  })
+  });
   
 });
