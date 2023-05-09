@@ -7,3 +7,12 @@
 
 <h5>Compartilhar</h5>
 <%= render partial: 'shared/social-network', locals: { position: @position } %>
+
+<div class="wrapper-form-applicant">
+  <% if user_signed_in? %>
+    <p>Insira suas informações para se candidatar a vaga de <%= "#{@position.name}" %></p>
+    <%= render 'applicants/form' %>
+  <% else %>
+    <p>Você precisa estar logado para se candidatar</p>
+  <% end %>
+</div>

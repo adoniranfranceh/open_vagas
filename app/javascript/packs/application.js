@@ -8,7 +8,11 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
-import "jquery"
+
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+import 'sweetalert2/src/sweetalert2.scss'
+window.Swal = Swal
 
 Rails.start()
 Turbolinks.start()
@@ -17,7 +21,7 @@ ActiveStorage.start()
 require("trix")
 require("@rails/actiontext")
 
-$(document).ready(function(){
+$(document).on('ready turbolinks:load', function(){
   if ($('.count-textarea').length > 0) {
     $('#current').text($('.count-textarea').val().length);
     $('.count-textarea').keyup(function(){
@@ -30,7 +34,6 @@ $(document).ready(function(){
     e.preventDefault();
     var url = $(this).attr('data-clipboard-text');
     navigator.clipboard.writeText(url);
-    alert('URL copiada com sucesso!')
-  });
-  
+    alert('URL copiada com sucesso.')
+  })
 });
