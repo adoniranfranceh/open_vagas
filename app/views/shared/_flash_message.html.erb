@@ -1,0 +1,20 @@
+<% if flash.present? %>
+  <% if flash[:success].present? %>
+    <% @icon = 'success' %>
+    <% @title = 'Tudo certo!' %>
+    <% @message = flash[:success] %>
+  <% else %>
+    <% @icon = 'error' %>
+    <% title = 'Erro!' %>
+    <% @message = flash[:error] %>
+  <% end %>  
+  
+  <%= javascript_tag do %>
+    Swal.fire({
+      title: '<%= "#{@title}" %>',
+      text: '<%= "#{@message}" %>',
+      icon: '<%= "#{@icon}" %>',
+      confirmButtonText: 'Ok!'
+    })
+  <% end %>  
+<% end %>
