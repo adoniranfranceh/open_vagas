@@ -5,7 +5,7 @@ class UserApplicantQuery
     @position_id = position_id
   end
 
-  def call
+  def valid?
     user_have_applicant?
   end
 

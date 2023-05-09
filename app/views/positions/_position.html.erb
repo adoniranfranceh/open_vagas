@@ -17,7 +17,7 @@
             <div class="col-sm mt-3">
               <%= link_to 'Ver mais', public_position_path(position.slug), class: 'btn btn-danger' %>
               <% if user_signed_in? %>
-                <% if !UserApplicantQuery.new(current_user.id, position.id).call %>
+                <% if !UserApplicantQuery.new(current_user.id, position.id).valid? %>
                   <%= link_to 'Candidata-se', public_position_path(position.slug), class: 'btn btn-success' %>
                 <% end %>
               <% end %>
