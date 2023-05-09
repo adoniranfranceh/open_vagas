@@ -3,10 +3,14 @@
     <% @icon = 'success' %>
     <% @title = 'Tudo certo!' %>
     <% @message = flash[:success] %>
-  <% else %>
+  <% elsif flash[:error] %>
     <% @icon = 'error' %>
     <% title = 'Erro!' %>
     <% @message = flash[:error] %>
+  <% else %>
+    <% @icon = 'success' %>
+    <% title = 'Alerta!' %>
+    <% @message = flash[:notice] %>
   <% end %>  
   
   <%= javascript_tag do %>
