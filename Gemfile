@@ -15,11 +15,11 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'figaro'
 gem 'simple_form'
 gem 'devise'
-
-gem 'kaminari'
 gem 'ransack'
 gem 'select2-rails'
 
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
