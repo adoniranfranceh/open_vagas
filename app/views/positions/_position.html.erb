@@ -16,7 +16,11 @@
           <div class="row">
             <div class="col-sm mt-3">
               <%= link_to 'Ver mais', public_position_path(position.slug), class: 'btn btn-danger' %>
-              <%= link_to 'Candidata-se', public_position_path(position.slug), class: 'btn btn-success' %>
+              <% if user_signed_in? %>
+                <% if !UserApplicantQuery.new(current_user.id, position.id).valid? %>
+                  <%= link_to 'Candidata-se', public_position_path(position.slug), class: 'btn btn-success' %>
+                <% end %>
+              <% end %>
             </div>
             <div class="col-sm text-right mt-3 group-social-network">
               <%= render partial: 'shared/social-network', locals: {position: position} %>

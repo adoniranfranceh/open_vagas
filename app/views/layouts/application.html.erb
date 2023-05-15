@@ -7,11 +7,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="bg-body-tertiary">
     <%= params %>
     <%= render 'layouts/navbar' %>
     <main class="container">
+      <%= render 'shared/flash_message' %>
       <%= yield %>
     </main>  
 
@@ -19,6 +21,5 @@
       <p>Sistema desenvolvido por Adoniran France</p>
       <p><%= "Desde #{Time.new.year}" %></p>
     </footer>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
