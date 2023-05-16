@@ -8,7 +8,11 @@ default: &default
 
 development:
   <<: *default
+
+  database: open_vagas_development
+  
   database: myapp_development
+
 
 test:
   <<: *default
@@ -18,4 +22,8 @@ production:
   <<: *default
   database: open_vagas_production
   username: <%= ENV.fetch("OPEN_VAGAS_DATABASE_USERNAME") { "open_vagas" } %>
+
   password: <%= ENV.fetch("OPEN_VAGAS_DATABASE_PASSWORD") { "postgres" } %>
+
+  password: <%= ENV.fetch("OPEN_VAGAS_DATABASE_PASSWORD") { "postgres" } %>
+
