@@ -1,19 +1,22 @@
-version: '3.9'
+version: '3.3'
 services:
   app:
     build: .
-    environment:
-      OPEN_VAGAS_DATABASE_PASSWORD: postgres
     stdin_open: true
     tty: true
-    ports: 
+    ports:
       - 3000:3000
     working_dir: /app
-    volumes: 
+    volumes:
       - .:/app
     command: bash -c 'rails s -b 0.0.0.0'
     depends_on:
       - db
+    environment:
+      - DATABASE_HOST= "192.168.1.0"
+
+
+
   db:
     image: postgres
     environment:
@@ -21,6 +24,8 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: myapp_development
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+volumes:
+  pgdata:
