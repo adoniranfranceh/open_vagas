@@ -18,7 +18,7 @@
               <%= link_to 'Ver mais', public_position_path(position.slug), class: 'btn btn-danger' %>
               <% if user_signed_in? %>
                 <% if !UserApplicantQuery.new(current_user.id, position.id).valid? %>
-                  <%= link_to 'Candidata-se', public_position_path(position.slug), class: 'btn btn-success' %>
+                  <%= link_to 'Candidata-se', public_position_path(position.slug), remote: true, 'data-bs-toggle': 'modal' ,'data-bs-target': '#modal', class: 'btn btn-success' %>
                 <% end %>
               <% end %>
             </div>
