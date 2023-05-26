@@ -21,6 +21,9 @@ ActiveStorage.start()
 require("trix")
 require("@rails/actiontext")
 
+global.$ = global.jQuery = jQuery;
+window.$ = window.jQuery = jQuery;
+
 $(document).on('ready turbolinks:load', function(){
   if ($('.count-textarea').length > 0) {
     $('#current').text($('.count-textarea').val().length);

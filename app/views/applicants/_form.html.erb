@@ -1,5 +1,4 @@
-<h1>Fórmulario para aplicar vaga</h1>
-<%= simple_form_for @applicant do |f| %>
+<%= simple_form_for @applicant, remote: (request.format.symbol == :js) ? true : false do |f| %>
   <%= f.hidden_field :position_id %>
   <%= f.input :name %>
   <%= f.input :email, input_html: { value: current_user.email } %>
