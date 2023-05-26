@@ -1,7 +1,8 @@
-<%= simple_form_for @applicant, remote: (request.format.symbol == :js) ? true : false do |f| %>
+<%= simple_form_for [@position, @applicant], remote: (request.format.symbol == :js) ? true : false do |f| %>
   <%= f.hidden_field :position_id %>
   <%= f.input :name %>
   <%= f.input :email, input_html: { value: current_user.email } %>
   <%= f.input :phone %>
+  <%= f.input :resume, as: :file, hint: 'Aceitamos somete arquivos PDF' %>
   <%= f.submit 'Aplicar vaga', class: 'btn btn-primary' %>
 <% end %>
