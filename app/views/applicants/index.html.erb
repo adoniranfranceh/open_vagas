@@ -1,0 +1,23 @@
+<h2>Minhas vagas</h2>
+
+<table class="table">
+  <thead class="table-dark">
+    <th>Nome</th>
+    <th>E-mail</th>
+    <th>Telefone</th>
+    <th>Currículo</th>
+    <th>Ações</th>
+  </thead>
+
+  <tbody>
+     <% @applicants.each do |applicant| %>
+     <tr>
+        <td><%= applicant.name %></td>
+        <td><%= applicant.email %></td>
+        <td><%= applicant.phone %></td>
+        <td><%= link_to 'Download', rails_blob_path(applicant.resume, disposition: "attachment"), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Button', '#', class: 'btn btn-primary' %></td>
+     </tr>
+     <% end %>
+  </tbody>
+</table>
