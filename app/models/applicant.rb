@@ -1,3 +1,5 @@
+require 'csv'
+
 class Applicant < ApplicationRecord
   belongs_to :user
   belongs_to :position
@@ -5,6 +7,19 @@ class Applicant < ApplicationRecord
   has_one_attached :resume
 
   validate :correct_resume_mime_type
+
+  def self.as_csv
+    attributes = %w[id name email phone ]
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      all.each do |applicant|
+        csv << attributes.map { |attr| applicant.send(attr) }
+      end
+    end
+
+  end
 
   private
 

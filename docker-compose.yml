@@ -1,7 +1,9 @@
 version: '3.9'
 services:
   app:
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile
     environment: 
       OPEN_VAGAS_DATABASE_PASSWORD: postgres
     stdin_open: true

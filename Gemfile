@@ -20,6 +20,8 @@ gem 'select2-rails'
 
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
+gem 'rubyzip'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
