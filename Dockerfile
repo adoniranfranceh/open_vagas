@@ -1,5 +1,6 @@
 FROM ruby:3.0.0
 
+RUN gem install bundler:2.4.13
 RUN bundle config --global frozen 1
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
