@@ -22,6 +22,9 @@ gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'rubyzip'
 
+gem 'redis'
+gem 'sidekiq'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
